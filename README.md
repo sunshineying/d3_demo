@@ -1,1 +1,1 @@
-# d3_demo
+Each demo is a simple chart.
