@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>嵌套结构</title>
+</head>
+
+<body>
+    <script src="../d3.min.js" charset="utf-8"></script>
+    <script>
+    var persons = [{
+        id: 100,
+        name: "张某某",
+        year: 1989,
+        hometown: "北京"
+    }, {
+        id: 101,
+        name: "李某某",
+        year: 1987,
+        hometown: "北京"
+    }, {
+        id: 102,
+        name: "王某某",
+        year: 1988,
+        hometown: "上海"
+    }, {
+        id: 103,
+        name: "赵某某",
+        year: 1987,
+        hometown: "广州"
+    }, {
+        id: 104,
+        name: "孙某某",
+        year: 1989,
+        hometown: "上海"
+    }];
+
+    var nest = d3.nest()
+        .key(function(d) {
+            return d.hometown;
+        })
+        // .sortKeys(d3.ascending)
+        // .sortValues(function(a, b) {
+        //     return d3.ascending(a.year, b.year);
+        // })
+        .rollup(function(values) {
+            return values.length;
+        })
+        .entries(persons);
+
+
+    console.log(nest);
+
+
+    var map = d3.nest()
+        .key(function(d) {
+            return d.hometown;
+        })
+        .map(persons, d3.map);
+
+    console.log(map);
+    </script>
+</body>
+
+</html>

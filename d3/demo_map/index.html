@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>映射</title>
+</head>
+
+<body>
+    <script src="../d3.min.js" charset="utf-8"></script>
+    <script>
+    //用于构建映射的数组
+    var dataset = [{
+        id: 1000,
+        color: "red"
+    }, {
+        id: 1001,
+        color: "green"
+    }, {
+        id: 1002,
+        color: "blue"
+    }];
+
+    var map = d3.map(dataset, function(d) {
+        return d.id;
+    });
+
+    console.log(map);
+    console.log(map.has(1001)); //true
+    console.log(map.has(1003)); //false
+
+    console.log(map.get(1001)); //object {id:1001,color:"green"}
+    console.log(map.get(1003)); //undefined
+
+
+
+    map.set(1001, {
+        id: 1001,
+        color: "yellow"
+    });
+
+    map.set(1003, {
+        id: 1003,
+        color: "white"
+    });
+
+    console.log(map.remove(1002)); //true
+
+    console.log(map.keys()); //["1000", "1001", "1003"]
+
+    console.log(map.values());
+
+    console.log(map.entries()); //有key和value
+
+    map.forEach(function(key, value) {
+        console.log(key);
+        console.log(value);
+    });
+
+    console.log(map.empty());
+
+    console.log(map.size());
+    </script>
+</body>
+
+</html>

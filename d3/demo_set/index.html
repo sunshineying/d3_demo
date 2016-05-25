@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>集合</title>
+</head>
+
+<body>
+    <script src="../d3.min.js" charset="utf-8"></script>
+    <script>
+    //集合中不允许出现相同的元素，如果有相同的元素，则只会保留其中一项。
+
+    var dataset = ["tiger", "dragon", "snake", "horse", "sheep"];
+
+    var set = d3.set(dataset);
+
+
+    console.log(set.has("tiger"));
+    console.log(set.add("monkey"));
+    console.log(set.add("tiger"));
+
+    console.log(set.remove("snake"));
+
+
+    console.log(set.values());
+
+
+    set.forEach(function(value) {
+        console.log(value);
+    });
+
+    console.log(set.empty());
+
+    console.log(set.size());
+    </script>
+</body>
+
+</html>
