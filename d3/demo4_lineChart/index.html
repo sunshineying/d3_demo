@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>折线图</title>
+    <style>
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+    }
+    
+    .focusCircle text,
+    .axis text {
+        font-family: sans-serif;
+        font-size: 11px;
+    }
+    
+    .overlay {
+        fill: none;
+        pointer-events: all;
+    }
+    
+    .focusCircle {
+        fill: #000;
+    }
+    
+    .focusLine {
+        stroke: #000;
+        stroke-width: 1.5px;
+        stroke-dasharray: 10, 5;
+    }
+    </style>
+</head>
+
+<body>
+    <script src="../d3.min.js" charset="utf-8"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
